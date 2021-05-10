@@ -1,0 +1,38 @@
+const { expect } = require("chai")
+const { ethers, upgrades } = require("hardhat")
+
+describe("Swap tokens contract V1", () => {
+  let MyDexV1, myDexV1, owner, addr1, addr2, ERC20, dai, aave
+  before(async () => {
+    ;[owner, addr1, addr2, _] = await ethers.getSigners()
+    MyDexV1 = await ethers.getContractFactory("MyDexV1")
+    myDexV1 = await upgrades.deployProxy(MyDexV1, [addr1.address])
+    ERC20 = await ethers.getContractFactory("ERC20")
+    dai = await ERC20.attach('0x6b175474e89094c44da98b954eedeac495271d0f')
+    aave = await ERC20.attach('0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9')
+  })
+  it("gives back the required token", async () => {
+    const initialBalance = await dai.balanceOf(owner.address)
+    expect(initialBalance).to.equal(0)
+    const recipientInitialBalance = await addr1.getBalance()
+    await myDexV1.connect(owner).Swap([100], ['0x6b175474e89094c44da98b954eedeac495271d0f'], { value: ethers.utils.parseEther("1.0")})
+    const endBalance = await dai.balanceOf(owner.address)
+    expect(endBalance).to.not.equal(0)
+    const recipientEndBalance = await addr1.getBalance()
+    expect(recipientInitialBalance).to.not.equal(recipientEndBalance)
+  })
+  it("gives back the required tokens", async () => {
+    const daiInitialBalance = await dai.balanceOf(addr2.address)
+    const aaveInitialBalance = await aave.balanceOf(addr2.address)
+    const recipientInitialBalance = await addr1.getBalance()
+    expect(daiInitialBalance).to.equal(0)
+    expect(aaveInitialBalance).to.equal(0)
+    await myDexV1.connect(addr2).Swap([50,50], ['0x6b175474e89094c44da98b954eedeac495271d0f','0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9'], { value: ethers.utils.parseEther("1.0")})
+    const daiEndBalance = await dai.balanceOf(addr2.address)
+    const aaveEndBalance = await aave.balanceOf(addr2.address)
+    expect(daiEndBalance).to.not.equal(0)
+    expect(aaveEndBalance).to.not.equal(0)
+    const recipientEndBalance = await addr1.getBalance()
+    expect(recipientInitialBalance).to.not.equal(recipientEndBalance)
+  })
+})

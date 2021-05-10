@@ -1,0 +1,211 @@
+{
+  "manifestVersion": "3.2",
+  "impls": {
+    "f74da846c51bf96cd819cc8e12dd9f2f17b732d828551c376603e34a41311937": {
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "txHash": "0x236c923f5d3d08e89dea886b813c86595e946edfd394bdc73f1e92a8d746a6f3",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:25"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:30"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "recipient",
+            "type": "t_address",
+            "src": "contracts/MyDexV2.sol:12"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "uniV2",
+            "type": "t_contract(IUniswapV2Router02)1664",
+            "src": "contracts/MyDexV2.sol:13"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "bPool",
+            "type": "t_contract(IBPool)1693",
+            "src": "contracts/MyDexV2.sol:14"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "weth",
+            "type": "t_contract(IWeth)1713",
+            "src": "contracts/MyDexV2.sol:15"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "owner",
+            "type": "t_address",
+            "src": "contracts/MyDexV2.sol:16"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(IUniswapV2Router02)1664": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_contract(IBPool)1693": {
+            "label": "contract IBPool"
+          },
+          "t_contract(IWeth)1713": {
+            "label": "contract IWeth"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "296014b8b1414672f9e37ac03e321d278ff91a0261e361a8c4c5b0d00ec497b7": {
+      "address": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+      "txHash": "0xcb268bee98dc065402a6735373d9b59c60d56494b5600da48855b50457257cd6",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:25"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:30"
+          },
+          {
+            "contract": "MyDexV1",
+            "label": "recipient",
+            "type": "t_address",
+            "src": "contracts/MyDexV1.sol:10"
+          },
+          {
+            "contract": "MyDexV1",
+            "label": "uniV2",
+            "type": "t_contract(IUniswapV2Router02)1664",
+            "src": "contracts/MyDexV1.sol:11"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(IUniswapV2Router02)1664": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "3cdcd37bb6ea55312db105f5560f823c72a8bd2b7d45a92a5a1edbfba9ab44cf": {
+      "address": "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
+      "txHash": "0x44d02bc54141442868c85a0deccd03dfd29e5adeefc9d76ac9acc429da80cc1a",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:25"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:30"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "recipient",
+            "type": "t_address",
+            "src": "contracts/MyDexV2.sol:13"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "uniV2",
+            "type": "t_contract(IUniswapV2Router02)1664",
+            "src": "contracts/MyDexV2.sol:14"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "bPool",
+            "type": "t_contract(BPool)1693",
+            "src": "contracts/MyDexV2.sol:15"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "weth",
+            "type": "t_contract(WETH9)2500",
+            "src": "contracts/MyDexV2.sol:16"
+          },
+          {
+            "contract": "MyDexV2",
+            "label": "registry",
+            "type": "t_contract(Registry)2238",
+            "src": "contracts/MyDexV2.sol:17"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(IUniswapV2Router02)1664": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_contract(BPool)1693": {
+            "label": "contract BPool"
+          },
+          "t_contract(WETH9)2500": {
+            "label": "contract WETH9"
+          },
+          "t_contract(Registry)2238": {
+            "label": "contract Registry"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    }
+  },
+  "proxies": [
+    {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "kind": "transparent",
+      "txHash": "0xe144251836cfe4f2adcebd145646cc692e7372eedf3c1bbf59defb1fda2137e2"
+    },
+    {
+      "address": "0x610178dA211FEF7D417bC0e6FeD39F05609AD788",
+      "kind": "transparent",
+      "txHash": "0x6622647db0585b039b39d12ab996bb810a074e93077832d4528732b40053e6dd"
+    },
+    {
+      "address": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+      "kind": "transparent",
+      "txHash": "0x326e18a574ddaca088c101e098ca8f2d87f2e3ad817472517f61ad2b01d3ce19"
+    },
+    {
+      "address": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+      "kind": "transparent",
+      "txHash": "0x292485d3a1ea27a7620c34f1df1b05409d3d7cea5f1706c87432c5b1f2b59905"
+    }
+  ],
+  "admin": {
+    "address": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+    "txHash": "0x0a4dddc11de7c6ab358859ccb3f4fa4f5e88d8a0e597357153416a367d65b44a"
+  }
+}
